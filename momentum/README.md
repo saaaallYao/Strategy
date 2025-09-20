@@ -24,8 +24,8 @@ This repository contains an intraday momentum strategy for the China A-share mar
 
 ### Filters
 - **Liquidity filter**: Yesterday’s total traded volume ≥ 0.8 × median of the past 20 days.  
-- **Extreme move filter**: Yesterday’s daily return (close/prev_close − 1) < ±8%.  
-- Both filters use **yesterday’s data (shifted)** to avoid lookahead bias.
+（- **Extreme move filter**: Yesterday’s daily return (close/prev_close − 1) < ±8%.  
+- Both filters use **yesterday’s data (shifted)** to avoid lookahead bias.）
 
 ### Trading Rules
 1. Each day, select **Top N (default 5)** symbols that pass filters.  
