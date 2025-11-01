@@ -1,0 +1,20 @@
+{
+  "strategy_metrics_csv": "docs/03_strategy_metrics.csv",
+  "benchmark_metrics_csv": "docs/03_benchmark_metrics.csv",
+  "figures": [
+    "docs/figures/03_equity.png",
+    "docs/figures/03_trades.png",
+    "docs/figures/03_monthly_returns.png"
+  ],
+  "params": {
+    "freq": "30min",
+    "rel_momentum_lookback": 8,
+    "spread_vol_lookback": 48,
+    "entry_threshold": 0.0015,
+    "decay_threshold": 0.0004,
+    "top_n": 3,
+    "target_vol": 0.22,
+    "max_leverage": 1.6,
+    "cooldown_bars": 4
+  }
+}
