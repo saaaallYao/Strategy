@@ -1,0 +1,95 @@
+{
+  "betas": {
+    "ETCUSDT": {
+      "slope": 0.6989981220334585,
+      "intercept": -4.374545622803453
+    },
+    "APTUSDT": {
+      "slope": 0.5341843851904287,
+      "intercept": -3.581099425227876
+    },
+    "ARBUSDT": {
+      "slope": 0.009723308758324833,
+      "intercept": 0.18046958479976638
+    }
+  },
+  "strategy_metrics": {
+    "train": {
+      "total_return": 3.161867898906503,
+      "annual_return": 7.111911476963861,
+      "sharpe": 9.022217235626723,
+      "max_drawdown": 0.05957167522118012,
+      "mar": 119.38411083049905,
+      "monthly_win_rate": 1.0,
+      "avg_turnover": 0.018201470215927846
+    },
+    "test": {
+      "total_return": 2.253758032424342,
+      "annual_return": 1.9505368894533288,
+      "sharpe": 4.577506796163148,
+      "max_drawdown": 0.1664584280270971,
+      "mar": 11.717862006577455,
+      "monthly_win_rate": 0.8,
+      "avg_turnover": 0.0162430107824548
+    },
+    "overall": {
+      "total_return": 12.541711105956297,
+      "annual_return": 3.352960749648089,
+      "sharpe": 6.251770877711214,
+      "max_drawdown": 0.1664584280270911,
+      "mar": 20.14293171807675,
+      "monthly_win_rate": 0.9130434782608695,
+      "avg_turnover": 0.01699605084910699
+    }
+  },
+  "baseline_metrics": {
+    "train": {
+      "total_return": 0.6536677046255106,
+      "annual_return": 1.0925933571400792,
+      "sharpe": 1.7668621630502066,
+      "max_drawdown": 0.24682743583188904,
+      "mar": 4.42654745189765,
+      "monthly_win_rate": 0.6666666666666666,
+      "avg_turnover": 0.0
+    },
+    "test": {
+      "total_return": 0.6287098757870269,
+      "annual_return": 0.5641514347961059,
+      "sharpe": 1.1566403101700993,
+      "max_drawdown": 0.3429143765885849,
+      "mar": 1.6451670542613395,
+      "monthly_win_rate": 0.6666666666666666,
+      "avg_turnover": 0.0
+    },
+    "overall": {
+      "total_return": 1.6933449217936918,
+      "annual_return": 0.7493742231261245,
+      "sharpe": 1.3892804830297458,
+      "max_drawdown": 0.3593792475883053,
+      "mar": 2.0851905839164826,
+      "monthly_win_rate": 0.6521739130434783,
+      "avg_turnover": 0.0
+    }
+  },
+  "config": {
+    "pairs": [
+      "ETCUSDT",
+      "APTUSDT",
+      "ARBUSDT"
+    ],
+    "z_entry": 2.0,
+    "z_exit": 0.8,
+    "spread_window": 144,
+    "base_weight": 0.18,
+    "vol_target": 0.25,
+    "max_gross_leverage": 1.2,
+    "cost_rate": 0.0005,
+    "resample_rule": "15min",
+    "train_split": "2024-06-30"
+  },
+  "trade_summary": {
+    "avg_active_pairs": 1.0293345361405997,
+    "max_active_pairs": 3,
+    "avg_turnover": 0.01699605084910699
+  }
+}
