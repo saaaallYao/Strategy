@@ -118,11 +118,22 @@ def default_universe() -> List[str]:
     return [
         "BTC-USDT",
         "ETH-USDT",
+        "BNB-USDT",
         "SOL-USDT",
         "XRP-USDT",
         "DOGE-USDT",
         "ADA-USDT",
-        "POL-USDT",  # MATIC rebranded; KuCoin uses POL-USDT
+        "LINK-USDT",
+        "AVAX-USDT",
+        "POL-USDT",  # KuCoin uses POL for former MATIC
+        "DOT-USDT",
+        "ATOM-USDT",
+        "APT-USDT",
+        "ARB-USDT",
+        "OP-USDT",
+        "SUI-USDT",
+        "NEAR-USDT",
+        "ETC-USDT",
     ]
 
 
