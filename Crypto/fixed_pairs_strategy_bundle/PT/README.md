@@ -1,12 +1,12 @@
 # Fixed Pairs Strategy – Paper Trading (KuCoin spot)
 
-Paper trading for the pairs reversion strategy using Binance US klines (public, no API key needed), with standardized logs (`data/paper_*_fixed_pairs_1.csv`).
+Paper trading for the pairs reversion strategy using KuCoin spot klines (public, no API key needed), with standardized logs (`data/paper_*_fixed_pairs_1.csv`).
 
 ## Run
 ```bash
 bash scripts/run_fixed_pairs_paper.sh
 # optional overrides:
-FP_BASE_SYMBOL=BTCUSD \
+FP_BASE_SYMBOL=BTC-USDT \
 FP_PAIRS="ETCUSDT,APTUSDT,ARBUSDT" \
 FP_RESAMPLE_RULE=15min \
 FP_SEED_DAYS=200 \
@@ -25,5 +25,6 @@ bash scripts/run_fixed_pairs_paper.sh
 
 ## Notes
 - Uses KuCoin spot klines (public, no API key) via `code/kucoin_client.py`.
-- Signal engine from `pairs_strategy` (reversion config), broker from `fixed_pairs_pt.broker` (fee default 0.0005).
-- Polls on bar close for the chosen resample rule (default 15min); cushions incremental fetches to avoid gaps.***
+- Signal engine in `code/pairs_strategy_core.py` + `code/pairs_strategy_signal.py`; paper broker in `code/fixed_pairs_broker.py` (fee default 0.0005).
+- Polls on bar close for the chosen resample rule (default 15min); cushions incremental fetches to avoid gaps.
+- All needed code lives under `code/` (flattened files, no extra folders). Data/logs stay under `data/`; scripts stay under `scripts/`.

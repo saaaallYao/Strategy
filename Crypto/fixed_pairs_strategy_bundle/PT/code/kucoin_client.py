@@ -104,14 +104,17 @@ def symbol_to_column(symbol: str) -> str:
 
 def to_kucoin_symbol(symbol: str) -> str:
     """Normalize symbols to KuCoin spot format with hyphen."""
-    sym = symbol.upper()
-    if "-" in sym:
-        return sym
+    sym = symbol.upper().replace("_", "-")
     if sym.endswith("USDT"):
-        return f"{sym[:-4]}-USDT"
-    if sym.endswith("USD"):
-        return f"{sym[:-3]}-USD"
-    return sym
+        core = sym[:-4]
+        core = core[:-1] if core.endswith("-") else core
+        return f"{core}-USDT"
+    if sym.endswith("-USD") or sym.endswith("USD"):
+        # KuCoin spot pairs use USDT; map USD inputs to the tradable USDT symbol.
+        core = sym[:-3]
+        core = core[:-1] if core.endswith("-") else core
+        return f"{core}-USDT"
+    return sym if "-" in sym else sym
 
 
 def fetch_history(

@@ -6,23 +6,20 @@ import os
 import sys
 from pathlib import Path
 
-CURRENT_DIR = Path(__file__).resolve().parent
-PAPER_ROOT = CURRENT_DIR.parent
-REPO_ROOT = PAPER_ROOT.parent  # contains fixed_pairs_pt
-BUNDLE_ROOT = PAPER_ROOT.parent / "fixed_pairs_strategy_bundle"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent  # repo root
+CODE_DIR = PROJECT_ROOT / "code"
 
-# Ensure the top-level repo (with fixed_pairs_pt) is before the bundle copy.
-for path in (PAPER_ROOT, REPO_ROOT, BUNDLE_ROOT):
-    if str(path) not in sys.path:
-        sys.path.insert(0, str(path))
+# Ensure the code directory (where all modules live) is on sys.path.
+if str(CODE_DIR) not in sys.path:
+    sys.path.insert(0, str(CODE_DIR))
 
-from code.live_trading_fixed_pairs import LiveFixedPairsTrader, configure_logging
+from live_trading_fixed_pairs import LiveFixedPairsTrader, configure_logging
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run fixed pairs strategy paper trader (Binance US klines).")
-    parser.add_argument("--base-symbol", default=os.environ.get("FP_BASE_SYMBOL", "BTCUSD"), help="Base asset symbol (default: BTCUSD)")
-    parser.add_argument("--pairs", nargs="+", default=None, help="Pairs to trade (Binance symbols). Defaults to strategy core PAIRS.")
+    parser = argparse.ArgumentParser(description="Run fixed pairs strategy paper trader (KuCoin spot klines).")
+    parser.add_argument("--base-symbol", default=os.environ.get("FP_BASE_SYMBOL", "BTC-USDT"), help="Base asset symbol (default: BTC-USDT)")
+    parser.add_argument("--pairs", nargs="+", default=None, help="Pairs to trade (KuCoin symbols). Defaults to strategy core PAIRS.")
     parser.add_argument("--resample-rule", default=os.environ.get("FP_RESAMPLE_RULE", "15min"), help="Resample rule (default: 15min)")
     parser.add_argument("--seed-days", type=int, default=int(os.environ.get("FP_SEED_DAYS", "200")), help="History days to bootstrap (default: 200)")
     parser.add_argument("--initial-capital", type=float, default=float(os.environ.get("FP_INITIAL_CAPITAL", "1000000")), help="Initial equity (default: 1,000,000)")

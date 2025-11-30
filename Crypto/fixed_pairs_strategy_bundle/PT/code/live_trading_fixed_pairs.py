@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import csv
 import logging
-import os
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -11,24 +10,25 @@ from typing import List, Optional
 import numpy as np
 import pandas as pd
 
-from pairs_strategy.core import StrategyConfig
-from pairs_strategy.signal import PairsSignalEngine
-from code.kucoin_client import (
+from pairs_strategy_core import StrategyConfig
+from pairs_strategy_signal import PairsSignalEngine
+from kucoin_client import (
     fetch_history,
     fetch_incremental,
     seconds_until_next_bar,
     symbol_to_column,
     to_kucoin_symbol,
 )
-from fixed_pairs_pt.broker import PairsPaperBroker
+from fixed_pairs_broker import PairsPaperBroker
 
 LOGGER = logging.getLogger(__name__)
 
 
 def get_log_paths(prefix: str = "fixed_pairs") -> tuple[Path, Path, Path]:
-    trade_log = Path(f"data/paper_trades_{prefix}_1.csv")
-    equity_log = Path(f"data/paper_equity_curve_{prefix}_1.csv")
-    signal_log = Path(f"data/paper_signals_{prefix}_1.csv")
+    base_dir = Path(__file__).resolve().parent.parent / "data"
+    trade_log = base_dir / f"paper_trades_{prefix}_1.csv"
+    equity_log = base_dir / f"paper_equity_curve_{prefix}_1.csv"
+    signal_log = base_dir / f"paper_signals_{prefix}_1.csv"
     return trade_log, equity_log, signal_log
 
 
