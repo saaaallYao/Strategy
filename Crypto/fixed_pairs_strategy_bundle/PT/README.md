@@ -5,6 +5,7 @@ Paper trading for the pairs reversion strategy using KuCoin spot klines (public,
 ## Run
 ```bash
 bash scripts/run_fixed_pairs_paper.sh
+# Windows/Git Bash: scripts/run_fixed_pairs_paper_win.sh (adds repo/code to sys.path internally)
 # optional overrides:
 FP_BASE_SYMBOL=BTC-USDT \
 FP_PAIRS="ETCUSDT,APTUSDT,ARBUSDT" \
