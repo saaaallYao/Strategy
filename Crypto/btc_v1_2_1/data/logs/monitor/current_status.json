@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-11T00:44:00+00:00",
+  "current_price": 90430.3675,
+  "current_zscore": 0.4522248529920505,
+  "current_signal": 0,
+  "current_position": 0,
+  "current_equity": 1.0011307865695414,
+  "total_trades": 1,
+  "winning_trades": 1,
+  "win_rate": 1.0,
+  "avg_pnl": 0.0011642874733020182,
+  "return_pct": 0.11307865695413533,
+  "order_execution_state": "NONE",
+  "pending_orders_count": 0,
+  "etf_enabled": true,
+  "etf_position": "flat",
+  "etf_portfolio_value": 35653.69,
+  "etf_positions": {},
+  "etf_trades_today": []
+}

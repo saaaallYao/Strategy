@@ -1,0 +1,34 @@
+{
+  "position": 0,
+  "equity": 1.0011307865695414,
+  "trade_history": [
+    {
+      "timestamp": "2026-01-10 03:29:00+00:00",
+      "action": "open",
+      "price": 90507.245,
+      "position": 0.06692388887590442,
+      "pnl": -3.346194443795221e-05,
+      "fee": 3.346194443795221e-05,
+      "gross_pnl": 0.0,
+      "zscore": -1.3371855051091248
+    },
+    {
+      "timestamp": "2026-01-10 08:05:00+00:00",
+      "action": "close",
+      "price": 90615.65,
+      "position": 0.06692388887590442,
+      "pnl": 0.0011642874733020182,
+      "gross_pnl": 0.0011977494177399703,
+      "fee": 3.346194443795221e-05,
+      "zscore": -0.13664148662987807
+    }
+  ],
+  "last_update": "2026-01-10T19:46:43.819492",
+  "entry_price": 0,
+  "entry_time": null,
+  "sage_mode": false,
+  "sage_mode_signal": 0,
+  "sage_mode_entry_time": null,
+  "order_execution_state": "NONE",
+  "pending_orders": {}
+}
